@@ -26,22 +26,3 @@ clf.fit(X_train, y_train)
 
 # Save the model
 joblib.dump(clf,'spam_classifier.joblib')
-
-
-
-
-# Test the model with two emails
-emails = [
-    'Sounds great! Are you home now?',
-    'Will u meet ur dream partner soon? Is ur career off 2 a flying start? 2 find out free, txt HORO followed by ur star sign, e. g. HORO ARIES'
-]
-
-# Make predictions
-predictions = clf.predict(emails)
-
-# Display predictions
-print(predictions)  # [0, 1], where 0 means "not spam" and 1 means "spam"
-
-# Evaluate the model
-accuracy = clf.score(X_test, y_test)
-print(f'Accuracy: {accuracy:.2f}')
